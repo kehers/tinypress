@@ -1,0 +1,9 @@
+pagination: 5
+
+
+list_content
+site_title
+pagination
+excerpt_separator: ""
+
+

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }} </title>
+    <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/default.css" />
+    <link rel="alternate" type="application/atom+xml" title="Feed for blog posts" href="/feed.xml">
+</head>
+<body>
+    <div class="wrapper">
+    <nav>
+        <a href="/">home</a> &middot; <a href="/feed.xml">feed</a>
+    </nav>
+    <header>
+        <h1>{{ page.title }}</h1>
+        <time>{{ page.date | date_to_string }}</time>
+    </header>
+    <article>
+        {{ content }}
+        {% for post in site.posts %}
+            {% if post.url == page.url %}
+                {% assign post_index = forloop.index %}                        
+            {% endif %}
+        {% endfor %}
+        {% for post in site.posts %}
+            {% if post_index == forloop.index0 %}
+                {% assign next_url = post_url %}
+                {% assign next_title = post_title %}
+            {% endif %}
+        {% endfor %}
+        {% if next_url %}
+        <aside>
+            <p><strong>next:</strong><br />
+            <a href="{{ next_url }}">{{ next_title }}</a></p>
+        </aside>
+        {% endif %}
+    </article>
+
+    <footer>
+        <a href="/">home</a> &middot; <a href="/feed.xml">feed</a> &middot; <a href="https://tinypress.co/">&lt;3, tinypress</a>
+    </footer>
+  </div>
+</body>
+</html>

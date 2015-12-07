@@ -1,0 +1,5 @@
+name: Solar Theme
+url: http://example.org
+description: A stylish blog using the Solarized color palette
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']

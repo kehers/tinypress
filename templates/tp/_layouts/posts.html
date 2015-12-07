@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet" type="text/css">
+    <link rel="alternate" type="/application/atom+xml" title="Feed for blog posts" href="/feed.xml">
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>{{ site.title }}</h1>
+        </header>
+        <article class="list">
+            <ul class="post-list">
+                {{ content }}
+
+        <footer>
+            <a href="/feed.xml">feed</a> &middot; <a href="https://tinypress.co/">&lt;3, tinypress</a>
+        </footer>
+    </div>
+</body>
+</html>
